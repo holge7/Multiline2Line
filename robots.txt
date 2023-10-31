@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://multiline2line.es/sitemap.xml
+Sitemap: https://multiline2line.com/sitemap.xml
