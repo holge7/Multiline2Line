@@ -17,7 +17,7 @@ body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     height: 100vh;
-    grid-template-rows: 10% 10% 50% 30%;
+    grid-template-rows: 1fr 1fr 5fr 3fr;
     overflow: hidden;
 }
 
@@ -32,6 +32,7 @@ body {
     align-items: center;
     grid-column: 2 / span 3;
     margin-top: 3rem;
+    min-width: min-content;
 }
 
 #title{
@@ -52,7 +53,7 @@ body {
     margin-top: 3rem;
 }
 .toggle {
-    font-size: 1rem; /* 👈 change this to scale */
+    font-size: 1rem; /* change this to scale */
     border: .2rem solid currentColor;
     border-radius: 20rem;
     cursor: pointer;
@@ -228,13 +229,14 @@ footer {
     width: 100%;
     height: 100%;
     background-color: var(--color-dark-1);
-    padding: 4rem 2rem;
+    padding: 4rem 0;
     text-align: center;
     justify-content: center;
     display: flex;
 }
 
 #footer-text{
+    width: 80%;
     color: var(--color-white);
 }
 
@@ -259,3 +261,67 @@ footer {
     flex-grow: 1;
 }
 
+@media screen and (max-width: 700px) {
+    #title {
+      font-size: 2rem;
+    }
+
+    #convert-section {
+        grid-template-rows: 50% min-content 50%;
+    }
+
+    #textarea-input{
+        grid-column: span 7;
+    }
+    
+    #option-btns{
+        grid-column: span 7;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #textarea-output{
+        grid-column: span 7;
+    }
+
+    .toggle {
+        font-size: .6rem; /* change this to scale */
+    }
+
+    #footer-text-wrapper{
+        padding: 1rem 0;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    #title {
+        font-size: 1.5rem;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .toggle {
+        font-size: .5rem; /* change this to scale */
+    }
+
+    .text-btn{
+        border: 2px solid;
+        font-size: .8rem;
+        padding: .4rem;
+    }
+
+    #top-msg h2{
+        font-size: .8rem !important;
+    }
+
+    #footer-text-wrapper{
+        padding: 1rem 0;
+    }
+
+    #footer-text{
+        font-size: .7rem !important;
+    }
+}
